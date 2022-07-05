@@ -1,0 +1,13 @@
+name: CI
+
+on:
+  workflow_dispatch:
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Run a multi-line script
+        run: |
+          printf '  \e[31m%s\e[0m\n' 'indented color'
+          printf '\e[31m  %s\e[0m\n' 'indented but color at start'
