@@ -9,8 +9,8 @@ jobs:
     steps:
       - name: Run a multi-line script
         env:
-          STEPS_JSON: ${{ toJSON(steps) }}
+          GITHUB_JSON: ${{ toJSON(github) }}
         run: |
           printf '  \e[31m%s\e[0m\n' 'indented color'
           printf '\e[31m  %s\e[0m\n' 'indented but color at start'
-          printf %s "$STEPS_JSON" | jq -C .
+          printf %s "$GITHUB_JSON" | jq -C .
