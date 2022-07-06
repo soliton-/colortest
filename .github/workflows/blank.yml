@@ -8,6 +8,9 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Run a multi-line script
+        env:
+          STEPS_JSON: ${{ toJSON(steps) }}
         run: |
           printf '  \e[31m%s\e[0m\n' 'indented color'
           printf '\e[31m  %s\e[0m\n' 'indented but color at start'
+          printf %s "$STEPS_JSON" | jq -C .
