@@ -13,4 +13,6 @@ jobs:
         run: |
           printf '  \e[31m%s\e[0m\n' 'indented color'
           printf '\e[31m  %s\e[0m\n' 'indented but color at start'
+          printf '  \e[31m%s\e[0m    \e[32m%s\e[0m\n' 'indented color' 'more color'
+          printf '\t\e[31m%s\e[0m\t\e[32m%s\e[0m\n' 'indented with tab' 'more color'
           printf %s "$GITHUB_JSON" | jq -C .
